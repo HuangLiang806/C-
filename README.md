@@ -1,2 +1,2 @@
-# C-
+# C++
 Record learning of C++
