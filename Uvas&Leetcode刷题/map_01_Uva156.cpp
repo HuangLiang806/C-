@@ -10,7 +10,7 @@ using namespace std;
 map <string, int> cnt;
 vector <string> words;
 
-// 将传入的字符串标准化：全部变为小写，每个单词按字母序由小到大排序
+// 灏嗕紶鍏ョ殑瀛楃涓叉爣鍑嗗寲锛氬叏閮ㄥ彉涓哄皬鍐欙紝姣忎釜鍗曡瘝鎸夊瓧姣嶅簭鐢卞皬鍒板ぇ鎺掑簭
 string repr(const string& s)
 {
     string ans = s;
