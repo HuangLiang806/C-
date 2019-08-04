@@ -4,6 +4,7 @@
 #include<map>
 #include<algorithm>
 
+//  待调试
 using namespace std;
 
 const int maxt = 1000 + 10;
@@ -24,26 +25,34 @@ int main()
             while(n--)
             {
                 cin >> x;
-                team[x] = i;  // ��¼�����Ŷӱ��
+                team[x] = i;  // 记录所在团队编号
             }
         }
-        //ģ���ŶӶ���
-        queue<int> q, q2;
+        //模拟团队队列
+        queue<int> q, q2[maxt];
         while(true)
         {
             int x;
             string cmd;
             cin >> cmd;
             if (cmd[0] == 'S') break;
-            if (cmd[0] == 'E')  //���
+            if (cmd[0] == 'E')  //入队
             {
-                int t =
+                cin >> x;
+                int t = team[x];
+                if(q2[t].empty()) q.push(t);  // 判断此团队是否在队列中，如否则入队
+                q2[t].push(x);
             }
-            else if (cmd[0] == 'D') //����
+            else if (cmd[0] == 'D') //出队
             {
+                int t = q.front();
+                cout << q2[t].front() << endl;
+                q2[t].pop();
+                if(q2[t].empty()) q.pop();
 
             }
         }
+        cout << endl;
     }
 
     return 0;
